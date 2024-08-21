@@ -7,6 +7,13 @@ import EnclosureId from "./classes/IDs";
 import Mammal from "./classes/Mammal";
 import Reptile from "./classes/Reptile";
 
+document.getElementById("animal-form") as HTMLFormElement;
+document.getElementById("animaType") as HTMLSelectElement;
+document.getElementById("animal-name") as HTMLInputElement;
+document.getElementById("animal-yearOfBirth") as HTMLInputElement;
+document.getElementById("animal-specialNeeds") as HTMLInputElement;
+document.getElementById("animal-create") as HTMLSelectElement;
+
 let enclosures: Enclosure[] = [];
 let animals: Animal[] = [];
 
