@@ -1,19 +1,29 @@
-:root {
+* {
   box-sizing: border-box;
   margin: 0;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  background-color: #e1d2cb;
-  margin: 4em 7em;
-  padding: 0;
+.header {
+  background-color: #1a613c;
+  color: white;
+  background-size: fill;
+  padding: 4em 0 4em 0;
+  background-image: url("./img/pexels-thomas-b-270703-814898.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 2em;
+  padding: 10em 0 10em 0;
+}
+.header > h1 {
+  font-size: 3em;
+  padding-bottom: 1em;
+  margin-top: 0.5em;
+  margin-left: 2em;
 }
 
-h1 {
-  text-align: center;
-  color: #ab2061;
-  padding-bottom: 1.5em;
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #efe9e6;
 }
 
 img {
@@ -39,6 +49,7 @@ img {
   padding: 3em;
   border-radius: 20px;
   text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 input[type="submit"] {
@@ -48,6 +59,7 @@ input[type="submit"] {
   border-radius: 5px;
   padding: 1em;
   margin-left: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 input {
