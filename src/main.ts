@@ -1,7 +1,11 @@
 import Animal from "./classes/Animal";
 import animalTypes from "./classes/Animaltypes";
+import Bird from "./classes/Bird";
 import Enclosure from "./classes/Enclosure";
+import Fish from "./classes/Fish";
 import EnclosureId from "./classes/IDs";
+import Mammal from "./classes/Mammal";
+import Reptile from "./classes/Reptile";
 
 let enclosures: Enclosure[] = [];
 let animals: Animal[] = [];
@@ -36,3 +40,63 @@ function createAnimals(): void {
 }
 
 createAnimals();
+
+const animalForm = document.getElementById("animal-form") as HTMLFormElement;
+animalForm.addEventListener("submit", (event: Event) => {
+  event.preventDefault();
+  const index = Object.keys(animalTypes).indexOf(selectElement.value);
+  const animalName = document.getElementById("animal-name") as HTMLInputElement;
+  const animalYearOfBirth = document.getElementById(
+    "animal-yearOfBirth"
+  ) as HTMLInputElement;
+  const animalSpecialNeeds = document.getElementById(
+    "animal-specialNeeds"
+  ) as HTMLInputElement;
+  switch (Object.values(animalTypes)[index]) {
+    case "Mammal":
+      const mammal = new Mammal(
+        "Emoji",
+        animalName.value,
+        Number(animalYearOfBirth.value),
+        "Continent",
+        animalSpecialNeeds.value,
+        EnclosureId.SavannahHabitat,
+        ""
+      );
+      break;
+
+    case "Reptile":
+      const reptile = new Reptile(
+        "Emoji",
+        animalName.value,
+        Number(animalYearOfBirth.value),
+        "Continent",
+        animalSpecialNeeds.value,
+        EnclosureId.ReptileHouse
+      );
+      break;
+
+    case "Bird":
+      const bird = new Bird(
+        "Emoji",
+        animalName.value,
+        Number(animalYearOfBirth.value),
+        "Continent",
+        animalSpecialNeeds.value,
+        EnclosureId.JungleHabitat
+      );
+      break;
+
+    case "Fish":
+      const fish = new Fish(
+        "Emoji",
+        animalName.value,
+        Number(animalYearOfBirth.value),
+        "Continent",
+        animalSpecialNeeds.value,
+        EnclosureId.AquaticHabitat,
+        ""
+      );
+      break;
+  }
+});
