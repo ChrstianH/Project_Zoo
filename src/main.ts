@@ -1,6 +1,8 @@
 import Animal from "./classes/Animal";
 import animalTypes from "./classes/Animaltypes";
 import Bird from "./classes/Bird";
+import continents from "./classes/Continents";
+import emojis from "./classes/Emojis";
 import Enclosure from "./classes/Enclosure";
 import Fish from "./classes/Fish";
 import EnclosureId from "./classes/IDs";
@@ -62,48 +64,52 @@ animalForm.addEventListener("submit", (event: Event) => {
   switch (Object.values(animalTypes)[index]) {
     case "Mammal":
       const mammal = new Mammal(
-        "Emoji",
+        emojis[index],
         animalName.value,
         Number(animalYearOfBirth.value),
-        "Continent",
+        continents[Math.random() * 6],
         animalSpecialNeeds.value,
-        EnclosureId.SavannahHabitat,
+        Object.values(EnclosureId)[Math.random() * 4],
         ""
       );
+      animals.push(mammal);
       break;
 
     case "Reptile":
       const reptile = new Reptile(
-        "Emoji",
+        emojis[index],
         animalName.value,
         Number(animalYearOfBirth.value),
-        "Continent",
+        continents[Math.random() * 6],
         animalSpecialNeeds.value,
         EnclosureId.ReptileHouse
       );
+      animals.push(reptile);
       break;
 
     case "Bird":
       const bird = new Bird(
-        "Emoji",
+        emojis[index],
         animalName.value,
         Number(animalYearOfBirth.value),
-        "Continent",
+        continents[Math.random() * 6],
         animalSpecialNeeds.value,
-        EnclosureId.JungleHabitat
+        Object.values(EnclosureId)[Math.random() * 4]
       );
+      animals.push(bird);
       break;
 
     case "Fish":
       const fish = new Fish(
-        "Emoji",
+        emojis[index],
         animalName.value,
         Number(animalYearOfBirth.value),
-        "Continent",
+        continents[Math.random() * 6],
         animalSpecialNeeds.value,
-        EnclosureId.AquaticHabitat,
+        Object.values(EnclosureId)[Math.random() * 4],
         ""
       );
+      animals.push(fish);
       break;
   }
 });
