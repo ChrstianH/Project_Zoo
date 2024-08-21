@@ -4,7 +4,6 @@ import Bird from "./classes/Bird";
 import continents from "./classes/Continents";
 import emojis from "./classes/Emojis";
 import Enclosure from "./classes/Enclosure";
-import enclosureArray from "./classes/EnclosureArray";
 import Fish from "./classes/Fish";
 import EnclosureId from "./classes/IDs";
 import Mammal from "./classes/Mammal";
@@ -36,20 +35,20 @@ enclosures = createEnclosures();
 const selectElement = document.getElementById(
   "animalType"
 ) as HTMLSelectElement;
-function createAnimals(): void {
-  Object.keys(animalTypes).forEach((animal: any, index: number) => {
-    if (index < 14) {
-      const optionElement = document.createElement(
-        "option"
-      ) as HTMLOptionElement;
-      optionElement.value = animal;
-      optionElement.textContent = animal;
-      selectElement.appendChild(optionElement);
-    }
-  });
-}
+// function createAnimals(): void {
+//   Object.keys(animalTypes).forEach((animal: any, index: number) => {
+//     if (index < 14) {
+//       const optionElement = document.createElement(
+//         "option"
+//       ) as HTMLOptionElement;
+//       optionElement.value = animal;
+//       optionElement.textContent = animal;
+//       selectElement.appendChild(optionElement);
+//     }
+//   });
+// }
 
-createAnimals();
+// createAnimals();
 
 const animalForm = document.getElementById("animal-form") as HTMLFormElement;
 animalForm.addEventListener("submit", (event: Event) => {
@@ -62,57 +61,62 @@ animalForm.addEventListener("submit", (event: Event) => {
   const animalSpecialNeeds = document.getElementById(
     "animal-specialNeeds"
   ) as HTMLInputElement;
-  switch (Object.values(animalTypes)[index]) {
-    case "Mammal":
-      const mammal = new Mammal(
-        emojis[index],
-        animalName.value,
-        Number(animalYearOfBirth.value),
-        continents[Math.floor(Math.random() * 6)],
-        animalSpecialNeeds.value,
-        Object.values(EnclosureId)[Math.floor(Math.random() * 4)],
-        ""
-      );
-      animals.push(mammal);
-      showAllAnimals();
-      break;
+  if (validateForm()) {
+    switch (Object.values(animalTypes)[index]) {
+      case "Mammal":
+        const mammal = new Mammal(
+          emojis[index],
+          animalName.value,
+          Number(animalYearOfBirth.value),
+          continents[Math.floor(Math.random() * 6)],
+          animalSpecialNeeds.value,
+          Object.values(EnclosureId)[Math.floor(Math.random() * 4)],
+          ""
+        );
+        animals.push(mammal);
+        showAllAnimals();
+        break;
 
-    case "Reptile":
-      const reptile = new Reptile(
-        emojis[index],
-        animalName.value,
-        Number(animalYearOfBirth.value),
-        continents[Math.floor(Math.random() * 6)],
-        animalSpecialNeeds.value,
-        EnclosureId.ReptileHouse
-      );
-      animals.push(reptile);
-      break;
+      case "Reptile":
+        const reptile = new Reptile(
+          emojis[index],
+          animalName.value,
+          Number(animalYearOfBirth.value),
+          continents[Math.floor(Math.random() * 6)],
+          animalSpecialNeeds.value,
+          EnclosureId.ReptileHouse
+        );
+        animals.push(reptile);
+        showAllAnimals();
+        break;
 
-    case "Bird":
-      const bird = new Bird(
-        emojis[index],
-        animalName.value,
-        Number(animalYearOfBirth.value),
-        continents[Math.floor(Math.random() * 6)],
-        animalSpecialNeeds.value,
-        Object.values(EnclosureId)[Math.floor(Math.random() * 4)]
-      );
-      animals.push(bird);
-      break;
+      case "Bird":
+        const bird = new Bird(
+          emojis[index],
+          animalName.value,
+          Number(animalYearOfBirth.value),
+          continents[Math.floor(Math.random() * 6)],
+          animalSpecialNeeds.value,
+          Object.values(EnclosureId)[Math.floor(Math.random() * 4)]
+        );
+        animals.push(bird);
+        showAllAnimals();
+        break;
 
-    case "Fish":
-      const fish = new Fish(
-        emojis[index],
-        animalName.value,
-        Number(animalYearOfBirth.value),
-        continents[Math.floor(Math.random() * 6)],
-        animalSpecialNeeds.value,
-        Object.values(EnclosureId)[Math.floor(Math.random() * 4)],
-        ""
-      );
-      animals.push(fish);
-      break;
+      case "Fish":
+        const fish = new Fish(
+          emojis[index],
+          animalName.value,
+          Number(animalYearOfBirth.value),
+          continents[Math.floor(Math.random() * 6)],
+          animalSpecialNeeds.value,
+          Object.values(EnclosureId)[Math.floor(Math.random() * 4)],
+          ""
+        );
+        animals.push(fish);
+        showAllAnimals();
+        break;
+    }
   }
 
   function validateForm(): boolean {
@@ -131,14 +135,20 @@ animalForm.addEventListener("submit", (event: Event) => {
 });
 
 function showAllAnimals() {
-  const savannahElement = document.getElementById("savannah") as HTMLDivElement;
+  const savannahElement = document.getElementById(
+    "savannahContainer"
+  ) as HTMLDivElement;
   savannahElement.innerHTML = "";
-  const jungleElement = document.getElementById("jungle") as HTMLDivElement;
+  const jungleElement = document.getElementById(
+    "jungleContainer"
+  ) as HTMLDivElement;
   jungleElement.innerHTML = "";
-  const aquariumElement = document.getElementById("aquarium") as HTMLDivElement;
+  const aquariumElement = document.getElementById(
+    "aquariumContainer"
+  ) as HTMLDivElement;
   aquariumElement.innerHTML = "";
   const reptileElement = document.getElementById(
-    "reptileHouse"
+    "reptileHouseContainer"
   ) as HTMLDivElement;
   reptileElement.innerHTML = "";
   animals.forEach((animal: Animal) => {
