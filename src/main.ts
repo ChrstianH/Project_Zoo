@@ -2,7 +2,6 @@ import Enclosure from "./classes/Enclosure";
 import EnclosureId from "./classes/IDs";
 
 let enclosures: Enclosure[] = [];
-let animals:Animal[] = [];
 
 function createEnclosures(): Enclosure[] {
   const savannah = new Enclosure(EnclosureId.SavannahHabitat, "Savannah", 2000);
@@ -16,5 +15,3 @@ function createEnclosures(): Enclosure[] {
   return [savannah, jungle, aquarium, reptileHouse];
 }
 enclosures = createEnclosures();
-
-function createAminals():
