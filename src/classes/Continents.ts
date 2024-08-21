@@ -6,3 +6,5 @@ let continents: string[] = [
   "NordAmerika",
   "SüdAmerika",
 ];
+
+export default continents;

@@ -4,3 +4,5 @@ let enclosureArray: string[] = [
   "Aquarium",
   "ReptileHouse",
 ];
+
+export default enclosureArray;
