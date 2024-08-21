@@ -1,8 +1,8 @@
 enum EnclosureId {
-  SavannahHabitat,
-  JungleHabitat,
-  AquaticHabitat,
-  ReptileHouse,
+  SavannahHabitat = "SavannahHabitat",
+  JungleHabitat = "JungleHabitat",
+  AquaticHabitat = "AquaticHabitat",
+  ReptileHouse = "ReptileHouse",
 }
 
 export default EnclosureId;
