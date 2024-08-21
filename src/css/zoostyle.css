@@ -1,0 +1,67 @@
+:root {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #e1d2cb;
+  margin: 4em 7em;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #ab2061;
+  padding-bottom: 1.5em;
+}
+
+img {
+  border-radius: 100%;
+  text-align: center;
+}
+
+#enclosures {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: #1a613c;
+}
+
+#enclosures h2 {
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+
+#animal-form {
+  background-color: #1a613c;
+  margin: 7em;
+  padding: 3em;
+  border-radius: 20px;
+  text-align: center;
+}
+
+input[type="submit"] {
+  background-color: #ab2061;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+  padding: 1em;
+  margin-left: 0.5em;
+}
+
+input {
+  background-color: white;
+  border-style: none;
+  border-radius: 20px;
+  padding: 0.5em;
+  margin-left: 0.5em;
+}
+
+select {
+  background-color: white;
+  border-style: none;
+  border-radius: 5px;
+  padding: 1em;
+  margin-left: 0.5em;
+}

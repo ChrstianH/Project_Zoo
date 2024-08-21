@@ -1,6 +1,13 @@
 import Enclosure from "./classes/Enclosure";
 import EnclosureId from "./classes/IDs";
 
+document.getElementById("animal-form") as HTMLFormElement;
+document.getElementById("animaType") as HTMLSelectElement;
+document.getElementById("animal-name") as HTMLInputElement;
+document.getElementById("animal-yearOfBirth") as HTMLInputElement;
+document.getElementById("animal-specialNeeds") as HTMLInputElement;
+document.getElementById("animal-create") as HTMLSelectElement;
+
 let enclosures: Enclosure[] = [];
 
 function createEnclosures(): Enclosure[] {
