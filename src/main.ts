@@ -4,6 +4,7 @@ import Bird from "./classes/Bird";
 import continents from "./classes/Continents";
 import emojis from "./classes/Emojis";
 import Enclosure from "./classes/Enclosure";
+import enclosureArray from "./classes/EnclosureArray";
 import Fish from "./classes/Fish";
 import EnclosureId from "./classes/IDs";
 import Mammal from "./classes/Mammal";
@@ -67,12 +68,13 @@ animalForm.addEventListener("submit", (event: Event) => {
         emojis[index],
         animalName.value,
         Number(animalYearOfBirth.value),
-        continents[Math.random() * 6],
+        continents[Math.floor(Math.random() * 6)],
         animalSpecialNeeds.value,
-        Object.values(EnclosureId)[Math.random() * 4],
+        Object.values(EnclosureId)[Math.floor(Math.random() * 4)],
         ""
       );
       animals.push(mammal);
+      showAllAnimals();
       break;
 
     case "Reptile":
@@ -80,7 +82,7 @@ animalForm.addEventListener("submit", (event: Event) => {
         emojis[index],
         animalName.value,
         Number(animalYearOfBirth.value),
-        continents[Math.random() * 6],
+        continents[Math.floor(Math.random() * 6)],
         animalSpecialNeeds.value,
         EnclosureId.ReptileHouse
       );
@@ -92,9 +94,9 @@ animalForm.addEventListener("submit", (event: Event) => {
         emojis[index],
         animalName.value,
         Number(animalYearOfBirth.value),
-        continents[Math.random() * 6],
+        continents[Math.floor(Math.random() * 6)],
         animalSpecialNeeds.value,
-        Object.values(EnclosureId)[Math.random() * 4]
+        Object.values(EnclosureId)[Math.floor(Math.random() * 4)]
       );
       animals.push(bird);
       break;
@@ -104,9 +106,9 @@ animalForm.addEventListener("submit", (event: Event) => {
         emojis[index],
         animalName.value,
         Number(animalYearOfBirth.value),
-        continents[Math.random() * 6],
+        continents[Math.floor(Math.random() * 6)],
         animalSpecialNeeds.value,
-        Object.values(EnclosureId)[Math.random() * 4],
+        Object.values(EnclosureId)[Math.floor(Math.random() * 4)],
         ""
       );
       animals.push(fish);
@@ -127,3 +129,33 @@ animalForm.addEventListener("submit", (event: Event) => {
     return true;
   }
 });
+
+function showAllAnimals() {
+  const savannahElement = document.getElementById("savannah") as HTMLDivElement;
+  savannahElement.innerHTML = "";
+  const jungleElement = document.getElementById("jungle") as HTMLDivElement;
+  jungleElement.innerHTML = "";
+  const aquariumElement = document.getElementById("aquarium") as HTMLDivElement;
+  aquariumElement.innerHTML = "";
+  const reptileElement = document.getElementById(
+    "reptileHouse"
+  ) as HTMLDivElement;
+  reptileElement.innerHTML = "";
+  animals.forEach((animal: Animal) => {
+    const animalEnclosure = animal._enclosureId;
+    switch (animalEnclosure) {
+      case EnclosureId.SavannahHabitat:
+        savannahElement.innerHTML += animal._emoji;
+        break;
+      case EnclosureId.JungleHabitat:
+        jungleElement.innerHTML += animal._emoji;
+        break;
+      case EnclosureId.ReptileHouse:
+        reptileElement.innerHTML += animal._emoji;
+        break;
+      case EnclosureId.AquaticHabitat:
+        aquariumElement.innerHTML += animal._emoji;
+        break;
+    }
+  });
+}
