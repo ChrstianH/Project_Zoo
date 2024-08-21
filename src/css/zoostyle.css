@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: ZenTokyoZoo;
+  src: url("../css/fonts/ZenTokyoZoo-Regular.ttf");
+}
+
 .header {
   background-color: #1a613c;
   color: white;
@@ -36,28 +41,37 @@ body {
   height: 200px;
 }
 
+h2 {
+  font-family: ZenTokyoZoo;
+  font-size: 30px;
+}
+
 #savannah {
   background-image: url("./img/pexels-ugandainpictures-26617399.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #jungle {
   background-image: url("./img/pexels-davidriano-975771.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #aquarium {
   background-image: url("./img/pexels-dbaler-10127369.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #reptileHouse {
   background-image: url("./img/pexels-vladvictoria-3767714.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 img {
@@ -91,8 +105,9 @@ input[type="submit"] {
   color: white;
   border-style: none;
   border-radius: 5px;
-  padding: 1em;
+  padding: 0.5em;
   margin-left: 0.5em;
+  margin-left: 2em;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -107,7 +122,8 @@ input {
 select {
   background-color: white;
   border-style: none;
-  border-radius: 5px;
-  padding: 1em;
+  border-radius: 20px;
+  padding: 0.5em;
+  margin-right: 2em;
   margin-left: 0.5em;
 }
