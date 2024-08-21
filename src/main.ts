@@ -106,4 +106,18 @@ animalForm.addEventListener("submit", (event: Event) => {
       );
       break;
   }
+
+  function validateForm(): boolean {
+    if (
+      !animalName.value ||
+      !animalYearOfBirth.value ||
+      isNaN(Number(animalYearOfBirth.value))
+    ) {
+      alert(
+        "Bitte füllen Sie alle Pflichtfelder aus und geben Sie ein gültiges Geburtsjahr an."
+      );
+      return false;
+    }
+    return true;
+  }
 });
