@@ -26,6 +26,40 @@ body {
   background-color: #efe9e6;
 }
 
+#savannah,
+#jungle,
+#aquarium,
+#reptileHouse {
+  background-color: #1a613c;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+}
+
+#savannah {
+  background-image: url("./img/pexels-ugandainpictures-26617399.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#jungle {
+  background-image: url("./img/pexels-davidriano-975771.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#aquarium {
+  background-image: url("./img/pexels-dbaler-10127369.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#reptileHouse {
+  background-image: url("./img/pexels-vladvictoria-3767714.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 img {
   border-radius: 100%;
   text-align: center;
