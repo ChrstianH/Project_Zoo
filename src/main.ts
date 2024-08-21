@@ -135,20 +135,14 @@ animalForm.addEventListener("submit", (event: Event) => {
 });
 
 function showAllAnimals() {
-  const savannahElement = document.getElementById(
-    "savannahContainer"
-  ) as HTMLDivElement;
+  const savannahElement = document.getElementById("savannah") as HTMLDivElement;
   savannahElement.innerHTML = "";
-  const jungleElement = document.getElementById(
-    "jungleContainer"
-  ) as HTMLDivElement;
+  const jungleElement = document.getElementById("jungle") as HTMLDivElement;
   jungleElement.innerHTML = "";
-  const aquariumElement = document.getElementById(
-    "aquariumContainer"
-  ) as HTMLDivElement;
+  const aquariumElement = document.getElementById("aquarium") as HTMLDivElement;
   aquariumElement.innerHTML = "";
   const reptileElement = document.getElementById(
-    "reptileHouseContainer"
+    "reptileHouse"
   ) as HTMLDivElement;
   reptileElement.innerHTML = "";
   animals.forEach((animal: Animal) => {
